@@ -11,12 +11,19 @@ import Foundation
 
 class PlayerHand {
     
+    var cardsInHand = Array<Int>()
+    
     var playerHands  = [Array<Int>()]
     
+    var playerCardsTotalSum = 0
+    
+    //May carry busted , blackjack , stand
+    var playerStatus : String = ""
+    
     func initializePlayers(){
-        for i in 1...2{
-            playerHands.append([])
-        }
+        let deck = Deck()
+         cardsInHand.append(deck.getACardFromDeck())
+         cardsInHand.append(deck.getACardFromDeck())
     }
     
     func getPlayerCards(var playerNumber :Int) -> [Int] {
@@ -30,12 +37,31 @@ class PlayerHand {
     }
     
     
-    func getSumOfCards(cardsInHand : Array<Int>) -> Int{
+    func getSumOfCards() -> Int{
         var tempCount = 0
         for card in cardsInHand {
             tempCount += card
         }
         return tempCount
+    }
+    
+    func isBlackJack() -> Bool {
+       var tempCount = getSumOfCards()
+        if  tempCount == 21 {
+            return true
+        }
+        playerCardsTotalSum = tempCount
+        return false
+    }
+    
+    func isBusted() -> Bool {
+        var tempCount = getSumOfCards()
+
+        if tempCount > 21 {
+            return true
+        }
+        return false
+        
     }
     
 }

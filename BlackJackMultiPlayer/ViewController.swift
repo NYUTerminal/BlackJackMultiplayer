@@ -50,6 +50,12 @@ class ViewController: UIViewController {
     
     let noOfPlayersInGame = 2
     
+    var PlayerHands = Array<PlayerHand>()
+    let playerHand = PlayerHand()
+    let playerHand1 = PlayerHand()
+    let deck = Deck()
+    let dealer  = Dealer()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,27 +91,47 @@ class ViewController: UIViewController {
         After Every 5 times need to shuffle the deck .
         Number of times played should be multiple of 5.
         */
-        let playerHand = PlayerHand()
-        let deck = Deck()
-        let dealer  = Dealer()
-        deck.buildDeck(noOfDecks.text)
         
-        //Initializing with for loop . Based on number of players
-        playerHand.initializePlayers()
-        for i in 0...1{
-            for j in 1...noOfPlayersInGame*2{
-                playerHand.addCardToHand(deck.getACardFromDeck(),playerNo :i)
-            }
-        }
+        
+       
+        PlayerHands.append(playerHand)
+        PlayerHands.append(playerHand1)
+      
         
         
         if numberOfGamesPlayed%5 == 0 {
             deck.shuffleTheDeck()
         }
         
+        deck.buildDeck(noOfDecks.text)
+        //Initializing with for loop . Based on number of players
+        playerHand.initializePlayers()
+        playerHand1.initializePlayers()
+        dealer.initializeDealer()
+
+        for player in PlayerHands {
+            
+            var isPlayerBusted = playerHand.isBusted()
+            var isPlayer1Busted = playerHand1.isBusted()
+            var isPlayerBlackJack = playerHand.isBlackJack()
+            var isPlayer1BlackJack = playerHand1.isBlackJack()
+            
+            if(isPlayerBusted){
+                playerHand.playerStatus = "busted"
+            }else if(isPlayer1Busted){
+                playerHand1.playerStatus = "busted"
+            }else if(isPlayerBlackJack){
+                playerHand.playerStatus = "blackjack"
+            }else if(isPlayer1BlackJack){
+                playerHand1.playerStatus = "blackjack"
+            }
+
+        }
         
-        dealer.dealerHand.append(deck.getACardFromDeck())
-        dealer.dealerHand.append(deck.getACardFromDeck())
+       
+        
+        
+       
         
        // dealerCards.append(getCardFromDeckAndRemove())
         //dealerCards.append(getCardFromDeckAndRemove())
@@ -120,15 +146,15 @@ class ViewController: UIViewController {
         //        bet = betOnView.text.toInt()!
         //        numberOfGamesPlayed++
         //
-                if isBlackJack(playerCards) == true
-                {
-                    makeBillingChanges(true)
-                    displayBalance()
-                    resetCardsTotalAndBetOnView()
-                    gameState.text = "Player Won !!"
-                    println("Player Won")
-                    return
-                }
+//                if isBlackJack(playerCards) == true
+//                {
+//                    makeBillingChanges(true)
+//                    displayBalance()
+//                    resetCardsTotalAndBetOnView()
+//                    gameState.text = "Player Won !!"
+//                    println("Player Won")
+//                    return
+//                }
         //        if isBusted(playerCards) == true
         //        {
         //            makeBillingChanges(false)
@@ -151,8 +177,14 @@ class ViewController: UIViewController {
     
     @IBAction func hit1() {
         
+        if(playerHand.playerStatus != "blackjack" && playerHand.playerStatus != "busted" && playerHand.playerStatus != "busted"){
+            playerHand.cardsInHand.append(deck.getACardFromDeck())
+            validationsAfterHit(playerHand , isDealerHand: false , label: gameState )
+        }
         
     }
+    
+
     
     @IBAction func stand1() {
         
@@ -160,7 +192,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func hit2() {
-        
+        if(playerHand1.playerStatus != "blackjack" && playerHand1.playerStatus != "busted" && playerHand1.playerStatus != "stand"){
+            playerHand1.cardsInHand.append(deck.getACardFromDeck())
+            validationsAfterHit(playerHand1 , isDealerHand: false , label: gameState )
+        }
         
     }
     
@@ -168,6 +203,22 @@ class ViewController: UIViewController {
     @IBAction func stand2() {
         
         
+    }
+    
+    func validationsAfterHit(var hand : PlayerHand ,var isDealerHand : Bool , var label : UILabel) {
+        if(hand.isBlackJack()){
+            label.text = label.text! + "BlackJack! Player Wont the game"
+        }else if(hand.isBusted()){
+            label.text = label.text! + "Busted! Player Busted"
+        }
+        
+        if isDealerHand {
+            if(dealer.isBlackJack()){
+                label.text = label.text! + "BlackJack! Dealer Won the game"
+            }else if(dealer.isBusted()){
+                label.text = label.text! + "Busted! Player Won  the game"
+            }
+        }
     }
     
 }
