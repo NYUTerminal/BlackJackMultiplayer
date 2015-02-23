@@ -1,0 +1,566 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB5C0B9C1A996D520084B72B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0B9B1A996D520084B72B /* AppDelegate.swift */; };
+		CB5C0B9E1A996D520084B72B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0B9D1A996D520084B72B /* ViewController.swift */; };
+		CB5C0BA11A996D520084B72B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB5C0B9F1A996D520084B72B /* Main.storyboard */; };
+		CB5C0BA31A996D520084B72B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB5C0BA21A996D520084B72B /* Images.xcassets */; };
+		CB5C0BA61A996D520084B72B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB5C0BA41A996D520084B72B /* LaunchScreen.xib */; };
+		CB5C0BB21A996D520084B72B /* BlackJackMultiPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0BB11A996D520084B72B /* BlackJackMultiPlayerTests.swift */; };
+		CB5C0C291A996F390084B72B /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0C281A996F390084B72B /* Deck.swift */; };
+		CB5C0C2B1A996F510084B72B /* PlayerHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0C2A1A996F510084B72B /* PlayerHand.swift */; };
+		CB5C0D1E1A997D340084B72B /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D031A997D340084B72B /* BlurView.swift */; };
+		CB5C0D1F1A997D340084B72B /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D041A997D340084B72B /* DesignableButton.swift */; };
+		CB5C0D201A997D340084B72B /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D051A997D340084B72B /* DesignableImageView.swift */; };
+		CB5C0D211A997D340084B72B /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D061A997D340084B72B /* DesignableLabel.swift */; };
+		CB5C0D221A997D340084B72B /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D071A997D340084B72B /* DesignableTabBarController.swift */; };
+		CB5C0D231A997D340084B72B /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D081A997D340084B72B /* DesignableTextField.swift */; };
+		CB5C0D241A997D340084B72B /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D091A997D340084B72B /* DesignableTextView.swift */; };
+		CB5C0D251A997D340084B72B /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D0A1A997D340084B72B /* DesignableView.swift */; };
+		CB5C0D261A997D340084B72B /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D0B1A997D340084B72B /* ImageLoader.swift */; };
+		CB5C0D271A997D340084B72B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB5C0D0C1A997D340084B72B /* Info.plist */; };
+		CB5C0D281A997D340084B72B /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D0D1A997D340084B72B /* KeyboardLayoutConstraint.swift */; };
+		CB5C0D291A997D340084B72B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D0E1A997D340084B72B /* LoadingView.swift */; };
+		CB5C0D2A1A997D340084B72B /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB5C0D0F1A997D340084B72B /* LoadingView.xib */; };
+		CB5C0D2B1A997D340084B72B /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D101A997D340084B72B /* Misc.swift */; };
+		CB5C0D2C1A997D340084B72B /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D111A997D340084B72B /* SoundPlayer.swift */; };
+		CB5C0D2D1A997D340084B72B /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D131A997D340084B72B /* Spring.swift */; };
+		CB5C0D2E1A997D340084B72B /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D141A997D340084B72B /* SpringAnimation.swift */; };
+		CB5C0D2F1A997D340084B72B /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D151A997D340084B72B /* SpringButton.swift */; };
+		CB5C0D301A997D340084B72B /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D161A997D340084B72B /* SpringImageView.swift */; };
+		CB5C0D311A997D340084B72B /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D171A997D340084B72B /* SpringLabel.swift */; };
+		CB5C0D321A997D340084B72B /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D181A997D340084B72B /* SpringTextField.swift */; };
+		CB5C0D331A997D340084B72B /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D191A997D340084B72B /* SpringTextView.swift */; };
+		CB5C0D341A997D340084B72B /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D1A1A997D340084B72B /* SpringView.swift */; };
+		CB5C0D351A997D340084B72B /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D1B1A997D340084B72B /* TransitionManager.swift */; };
+		CB5C0D361A997D340084B72B /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D1C1A997D340084B72B /* TransitionZoom.swift */; };
+		CB5C0D371A997D340084B72B /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D1D1A997D340084B72B /* UnwindSegue.swift */; };
+		CB5C0D391A99A7040084B72B /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D381A99A7040084B72B /* Dealer.swift */; };
+		CB5C0D3D1A9AA7690084B72B /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB5C0D3C1A9AA7690084B72B /* background.jpg */; };
+		CB5C0D411A9AA8E40084B72B /* backgroundred.png in Resources */ = {isa = PBXBuildFile; fileRef = CB5C0D401A9AA8E40084B72B /* backgroundred.png */; };
+		CB5C0D431A9AAA2E0084B72B /* ironman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB5C0D421A9AAA2E0084B72B /* ironman.jpg */; };
+		CB5C0D451A9AAAF00084B72B /* ironman_crop.png in Resources */ = {isa = PBXBuildFile; fileRef = CB5C0D441A9AAAF00084B72B /* ironman_crop.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB5C0BAC1A996D520084B72B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB5C0B8E1A996D520084B72B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB5C0B951A996D520084B72B;
+			remoteInfo = BlackJackMultiPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CB5C0B961A996D520084B72B /* BlackJackMultiPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackJackMultiPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB5C0B9A1A996D520084B72B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB5C0B9B1A996D520084B72B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB5C0B9D1A996D520084B72B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB5C0BA01A996D520084B72B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB5C0BA21A996D520084B72B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CB5C0BA51A996D520084B72B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		CB5C0BAB1A996D520084B72B /* BlackJackMultiPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlackJackMultiPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB5C0BB01A996D520084B72B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB5C0BB11A996D520084B72B /* BlackJackMultiPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJackMultiPlayerTests.swift; sourceTree = "<group>"; };
+		CB5C0C281A996F390084B72B /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		CB5C0C2A1A996F510084B72B /* PlayerHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerHand.swift; sourceTree = "<group>"; };
+		CB5C0D031A997D340084B72B /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		CB5C0D041A997D340084B72B /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		CB5C0D051A997D340084B72B /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
+		CB5C0D061A997D340084B72B /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
+		CB5C0D071A997D340084B72B /* DesignableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTabBarController.swift; sourceTree = "<group>"; };
+		CB5C0D081A997D340084B72B /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		CB5C0D091A997D340084B72B /* DesignableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextView.swift; sourceTree = "<group>"; };
+		CB5C0D0A1A997D340084B72B /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		CB5C0D0B1A997D340084B72B /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		CB5C0D0C1A997D340084B72B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB5C0D0D1A997D340084B72B /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		CB5C0D0E1A997D340084B72B /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		CB5C0D0F1A997D340084B72B /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		CB5C0D101A997D340084B72B /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		CB5C0D111A997D340084B72B /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		CB5C0D121A997D340084B72B /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spring.h; sourceTree = "<group>"; };
+		CB5C0D131A997D340084B72B /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		CB5C0D141A997D340084B72B /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		CB5C0D151A997D340084B72B /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
+		CB5C0D161A997D340084B72B /* SpringImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringImageView.swift; sourceTree = "<group>"; };
+		CB5C0D171A997D340084B72B /* SpringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringLabel.swift; sourceTree = "<group>"; };
+		CB5C0D181A997D340084B72B /* SpringTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextField.swift; sourceTree = "<group>"; };
+		CB5C0D191A997D340084B72B /* SpringTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextView.swift; sourceTree = "<group>"; };
+		CB5C0D1A1A997D340084B72B /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		CB5C0D1B1A997D340084B72B /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		CB5C0D1C1A997D340084B72B /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
+		CB5C0D1D1A997D340084B72B /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		CB5C0D381A99A7040084B72B /* Dealer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
+		CB5C0D3C1A9AA7690084B72B /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		CB5C0D401A9AA8E40084B72B /* backgroundred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundred.png; sourceTree = "<group>"; };
+		CB5C0D421A9AAA2E0084B72B /* ironman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ironman.jpg; path = ../ironman.jpg; sourceTree = "<group>"; };
+		CB5C0D441A9AAAF00084B72B /* ironman_crop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ironman_crop.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB5C0B931A996D520084B72B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB5C0BA81A996D520084B72B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB5C0B8D1A996D520084B72B = {
+			isa = PBXGroup;
+			children = (
+				CB5C0B981A996D520084B72B /* BlackJackMultiPlayer */,
+				CB5C0BAE1A996D520084B72B /* BlackJackMultiPlayerTests */,
+				CB5C0B971A996D520084B72B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB5C0B971A996D520084B72B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB5C0B961A996D520084B72B /* BlackJackMultiPlayer.app */,
+				CB5C0BAB1A996D520084B72B /* BlackJackMultiPlayerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB5C0B981A996D520084B72B /* BlackJackMultiPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				CB5C0D021A997D340084B72B /* Spring */,
+				CB5C0B9B1A996D520084B72B /* AppDelegate.swift */,
+				CB5C0B9D1A996D520084B72B /* ViewController.swift */,
+				CB5C0B9F1A996D520084B72B /* Main.storyboard */,
+				CB5C0BA21A996D520084B72B /* Images.xcassets */,
+				CB5C0D3C1A9AA7690084B72B /* background.jpg */,
+				CB5C0D421A9AAA2E0084B72B /* ironman.jpg */,
+				CB5C0D441A9AAAF00084B72B /* ironman_crop.png */,
+				CB5C0D401A9AA8E40084B72B /* backgroundred.png */,
+				CB5C0BA41A996D520084B72B /* LaunchScreen.xib */,
+				CB5C0B991A996D520084B72B /* Supporting Files */,
+				CB5C0C281A996F390084B72B /* Deck.swift */,
+				CB5C0C2A1A996F510084B72B /* PlayerHand.swift */,
+				CB5C0D381A99A7040084B72B /* Dealer.swift */,
+			);
+			path = BlackJackMultiPlayer;
+			sourceTree = "<group>";
+		};
+		CB5C0B991A996D520084B72B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB5C0B9A1A996D520084B72B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB5C0BAE1A996D520084B72B /* BlackJackMultiPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB5C0BB11A996D520084B72B /* BlackJackMultiPlayerTests.swift */,
+				CB5C0BAF1A996D520084B72B /* Supporting Files */,
+			);
+			path = BlackJackMultiPlayerTests;
+			sourceTree = "<group>";
+		};
+		CB5C0BAF1A996D520084B72B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB5C0BB01A996D520084B72B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB5C0D021A997D340084B72B /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				CB5C0D031A997D340084B72B /* BlurView.swift */,
+				CB5C0D041A997D340084B72B /* DesignableButton.swift */,
+				CB5C0D051A997D340084B72B /* DesignableImageView.swift */,
+				CB5C0D061A997D340084B72B /* DesignableLabel.swift */,
+				CB5C0D071A997D340084B72B /* DesignableTabBarController.swift */,
+				CB5C0D081A997D340084B72B /* DesignableTextField.swift */,
+				CB5C0D091A997D340084B72B /* DesignableTextView.swift */,
+				CB5C0D0A1A997D340084B72B /* DesignableView.swift */,
+				CB5C0D0B1A997D340084B72B /* ImageLoader.swift */,
+				CB5C0D0C1A997D340084B72B /* Info.plist */,
+				CB5C0D0D1A997D340084B72B /* KeyboardLayoutConstraint.swift */,
+				CB5C0D0E1A997D340084B72B /* LoadingView.swift */,
+				CB5C0D0F1A997D340084B72B /* LoadingView.xib */,
+				CB5C0D101A997D340084B72B /* Misc.swift */,
+				CB5C0D111A997D340084B72B /* SoundPlayer.swift */,
+				CB5C0D121A997D340084B72B /* Spring.h */,
+				CB5C0D131A997D340084B72B /* Spring.swift */,
+				CB5C0D141A997D340084B72B /* SpringAnimation.swift */,
+				CB5C0D151A997D340084B72B /* SpringButton.swift */,
+				CB5C0D161A997D340084B72B /* SpringImageView.swift */,
+				CB5C0D171A997D340084B72B /* SpringLabel.swift */,
+				CB5C0D181A997D340084B72B /* SpringTextField.swift */,
+				CB5C0D191A997D340084B72B /* SpringTextView.swift */,
+				CB5C0D1A1A997D340084B72B /* SpringView.swift */,
+				CB5C0D1B1A997D340084B72B /* TransitionManager.swift */,
+				CB5C0D1C1A997D340084B72B /* TransitionZoom.swift */,
+				CB5C0D1D1A997D340084B72B /* UnwindSegue.swift */,
+			);
+			path = Spring;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB5C0B951A996D520084B72B /* BlackJackMultiPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB5C0BB51A996D520084B72B /* Build configuration list for PBXNativeTarget "BlackJackMultiPlayer" */;
+			buildPhases = (
+				CB5C0B921A996D520084B72B /* Sources */,
+				CB5C0B931A996D520084B72B /* Frameworks */,
+				CB5C0B941A996D520084B72B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlackJackMultiPlayer;
+			productName = BlackJackMultiPlayer;
+			productReference = CB5C0B961A996D520084B72B /* BlackJackMultiPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB5C0BAA1A996D520084B72B /* BlackJackMultiPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB5C0BB81A996D520084B72B /* Build configuration list for PBXNativeTarget "BlackJackMultiPlayerTests" */;
+			buildPhases = (
+				CB5C0BA71A996D520084B72B /* Sources */,
+				CB5C0BA81A996D520084B72B /* Frameworks */,
+				CB5C0BA91A996D520084B72B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB5C0BAD1A996D520084B72B /* PBXTargetDependency */,
+			);
+			name = BlackJackMultiPlayerTests;
+			productName = BlackJackMultiPlayerTests;
+			productReference = CB5C0BAB1A996D520084B72B /* BlackJackMultiPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB5C0B8E1A996D520084B72B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = NYU;
+				TargetAttributes = {
+					CB5C0B951A996D520084B72B = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					CB5C0BAA1A996D520084B72B = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = CB5C0B951A996D520084B72B;
+					};
+				};
+			};
+			buildConfigurationList = CB5C0B911A996D520084B72B /* Build configuration list for PBXProject "BlackJackMultiPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB5C0B8D1A996D520084B72B;
+			productRefGroup = CB5C0B971A996D520084B72B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB5C0B951A996D520084B72B /* BlackJackMultiPlayer */,
+				CB5C0BAA1A996D520084B72B /* BlackJackMultiPlayerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB5C0B941A996D520084B72B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB5C0D271A997D340084B72B /* Info.plist in Resources */,
+				CB5C0BA11A996D520084B72B /* Main.storyboard in Resources */,
+				CB5C0BA61A996D520084B72B /* LaunchScreen.xib in Resources */,
+				CB5C0D3D1A9AA7690084B72B /* background.jpg in Resources */,
+				CB5C0BA31A996D520084B72B /* Images.xcassets in Resources */,
+				CB5C0D2A1A997D340084B72B /* LoadingView.xib in Resources */,
+				CB5C0D431A9AAA2E0084B72B /* ironman.jpg in Resources */,
+				CB5C0D451A9AAAF00084B72B /* ironman_crop.png in Resources */,
+				CB5C0D411A9AA8E40084B72B /* backgroundred.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB5C0BA91A996D520084B72B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB5C0B921A996D520084B72B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB5C0D361A997D340084B72B /* TransitionZoom.swift in Sources */,
+				CB5C0D341A997D340084B72B /* SpringView.swift in Sources */,
+				CB5C0C291A996F390084B72B /* Deck.swift in Sources */,
+				CB5C0D2B1A997D340084B72B /* Misc.swift in Sources */,
+				CB5C0D301A997D340084B72B /* SpringImageView.swift in Sources */,
+				CB5C0D321A997D340084B72B /* SpringTextField.swift in Sources */,
+				CB5C0B9E1A996D520084B72B /* ViewController.swift in Sources */,
+				CB5C0D1E1A997D340084B72B /* BlurView.swift in Sources */,
+				CB5C0D311A997D340084B72B /* SpringLabel.swift in Sources */,
+				CB5C0C2B1A996F510084B72B /* PlayerHand.swift in Sources */,
+				CB5C0D241A997D340084B72B /* DesignableTextView.swift in Sources */,
+				CB5C0B9C1A996D520084B72B /* AppDelegate.swift in Sources */,
+				CB5C0D1F1A997D340084B72B /* DesignableButton.swift in Sources */,
+				CB5C0D2F1A997D340084B72B /* SpringButton.swift in Sources */,
+				CB5C0D2D1A997D340084B72B /* Spring.swift in Sources */,
+				CB5C0D211A997D340084B72B /* DesignableLabel.swift in Sources */,
+				CB5C0D291A997D340084B72B /* LoadingView.swift in Sources */,
+				CB5C0D351A997D340084B72B /* TransitionManager.swift in Sources */,
+				CB5C0D251A997D340084B72B /* DesignableView.swift in Sources */,
+				CB5C0D231A997D340084B72B /* DesignableTextField.swift in Sources */,
+				CB5C0D391A99A7040084B72B /* Dealer.swift in Sources */,
+				CB5C0D221A997D340084B72B /* DesignableTabBarController.swift in Sources */,
+				CB5C0D331A997D340084B72B /* SpringTextView.swift in Sources */,
+				CB5C0D281A997D340084B72B /* KeyboardLayoutConstraint.swift in Sources */,
+				CB5C0D201A997D340084B72B /* DesignableImageView.swift in Sources */,
+				CB5C0D2C1A997D340084B72B /* SoundPlayer.swift in Sources */,
+				CB5C0D2E1A997D340084B72B /* SpringAnimation.swift in Sources */,
+				CB5C0D371A997D340084B72B /* UnwindSegue.swift in Sources */,
+				CB5C0D261A997D340084B72B /* ImageLoader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB5C0BA71A996D520084B72B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB5C0BB21A996D520084B72B /* BlackJackMultiPlayerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB5C0BAD1A996D520084B72B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB5C0B951A996D520084B72B /* BlackJackMultiPlayer */;
+			targetProxy = CB5C0BAC1A996D520084B72B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB5C0B9F1A996D520084B72B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB5C0BA01A996D520084B72B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CB5C0BA41A996D520084B72B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB5C0BA51A996D520084B72B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB5C0BB31A996D520084B72B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB5C0BB41A996D520084B72B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB5C0BB61A996D520084B72B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BlackJackMultiPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CB5C0BB71A996D520084B72B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BlackJackMultiPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CB5C0BB91A996D520084B72B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BlackJackMultiPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlackJackMultiPlayer.app/BlackJackMultiPlayer";
+			};
+			name = Debug;
+		};
+		CB5C0BBA1A996D520084B72B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BlackJackMultiPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlackJackMultiPlayer.app/BlackJackMultiPlayer";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB5C0B911A996D520084B72B /* Build configuration list for PBXProject "BlackJackMultiPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB5C0BB31A996D520084B72B /* Debug */,
+				CB5C0BB41A996D520084B72B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB5C0BB51A996D520084B72B /* Build configuration list for PBXNativeTarget "BlackJackMultiPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB5C0BB61A996D520084B72B /* Debug */,
+				CB5C0BB71A996D520084B72B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB5C0BB81A996D520084B72B /* Build configuration list for PBXNativeTarget "BlackJackMultiPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB5C0BB91A996D520084B72B /* Debug */,
+				CB5C0BBA1A996D520084B72B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB5C0B8E1A996D520084B72B /* Project object */;
+}
