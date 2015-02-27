@@ -153,9 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				CB5C0D021A997D340084B72B /* Spring */,
-				CB5C0B9B1A996D520084B72B /* AppDelegate.swift */,
-				CB44B5271A9D5463000C66DF /* HomeViewController.swift */,
-				CB5C0B9D1A996D520084B72B /* ViewController.swift */,
 				CB5C0B9F1A996D520084B72B /* Main.storyboard */,
 				CB5C0BA21A996D520084B72B /* Images.xcassets */,
 				CB5C0D3C1A9AA7690084B72B /* background.jpg */,
@@ -163,13 +160,16 @@
 				CB5C0D441A9AAAF00084B72B /* ironman_crop.png */,
 				CB5C0D401A9AA8E40084B72B /* backgroundred.png */,
 				CB5C0BA41A996D520084B72B /* LaunchScreen.xib */,
-				CB5C0B991A996D520084B72B /* Supporting Files */,
 				CB5C0C281A996F390084B72B /* Deck.swift */,
+				CB5C0B9B1A996D520084B72B /* AppDelegate.swift */,
+				CB5C0B9D1A996D520084B72B /* ViewController.swift */,
 				CB5C0C2A1A996F510084B72B /* Player.swift */,
+				CB44B5271A9D5463000C66DF /* HomeViewController.swift */,
 				CB5C0D381A99A7040084B72B /* Dealer.swift */,
 				CB05F9431AA00956001642FF /* HandStatus.swift */,
 				CB05F9411A9FFD4F001642FF /* Hand.swift */,
 				CB05F9451AA030EC001642FF /* GameProperties.swift */,
+				CB5C0B991A996D520084B72B /* Supporting Files */,
 			);
 			path = BlackJackMultiPlayer;
 			sourceTree = "<group>";
