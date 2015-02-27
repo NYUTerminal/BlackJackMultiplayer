@@ -1,51 +1,44 @@
 //
-//  Dealer.swift
+//  Hand.swift
 //  BlackJackMultiPlayer
 //
-//  Created by praveen on 2/22/15.
+//  Created by praveen on 2/26/15.
 //  Copyright (c) 2015 NYU. All rights reserved.
 //
 
 import Foundation
 
-
-class Dealer {
+class Hand {
     
-    var dealerHand  = Array<Int>()
+    var cardsInHand : [Int] = []
     
-    var dealerBalance : Double = 100;
+    var handStatus : HandStatus = HandStatus.Turn
     
-    let deck = Deck()
+    var bet : Double = 0
     
-    var dealerCardsSum : Int {
+    var handSum : Int {
         get{
             var tempCount : Int = 0
-            for card in dealerHand {
+            for card in cardsInHand {
                 tempCount += card
             }
             //handSum = tempCount
             return tempCount
         }set{
-            self.dealerCardsSum = newValue
+            self.handSum = newValue
         }
-    }
-    
-    func initializeDealer(){
-        dealerHand.append(deck.getACardFromDeck())
-        dealerHand.append(deck.getACardFromDeck())
     }
     
     func isBlackJack() -> Bool {
-        var tempCount = dealerCardsSum
+        var tempCount = handSum
         if  tempCount == 21 {
             return true
         }
-        dealerCardsSum = tempCount
         return false
     }
     
     func isBusted() -> Bool {
-        var tempCount = dealerCardsSum
+        var tempCount = handSum
         
         if tempCount > 21 {
             return true
@@ -53,5 +46,14 @@ class Dealer {
         return false
         
     }
-
+    
+    
+    func getAllCardsInString() -> String {
+        var tempString = ""
+        for i in 1...cardsInHand.count{
+            tempString = tempString + " , " + String(cardsInHand[i])
+        }
+        return tempString
+    }
+    
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB05F9421A9FFD4F001642FF /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05F9411A9FFD4F001642FF /* Hand.swift */; };
+		CB05F9441AA00956001642FF /* HandStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05F9431AA00956001642FF /* HandStatus.swift */; };
+		CB05F9461AA030EC001642FF /* GameProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05F9451AA030EC001642FF /* GameProperties.swift */; };
+		CB44B5281A9D5463000C66DF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB44B5271A9D5463000C66DF /* HomeViewController.swift */; };
 		CB5C0B9C1A996D520084B72B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0B9B1A996D520084B72B /* AppDelegate.swift */; };
 		CB5C0B9E1A996D520084B72B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0B9D1A996D520084B72B /* ViewController.swift */; };
 		CB5C0BA11A996D520084B72B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB5C0B9F1A996D520084B72B /* Main.storyboard */; };
@@ -14,7 +18,7 @@
 		CB5C0BA61A996D520084B72B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB5C0BA41A996D520084B72B /* LaunchScreen.xib */; };
 		CB5C0BB21A996D520084B72B /* BlackJackMultiPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0BB11A996D520084B72B /* BlackJackMultiPlayerTests.swift */; };
 		CB5C0C291A996F390084B72B /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0C281A996F390084B72B /* Deck.swift */; };
-		CB5C0C2B1A996F510084B72B /* PlayerHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0C2A1A996F510084B72B /* PlayerHand.swift */; };
+		CB5C0C2B1A996F510084B72B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0C2A1A996F510084B72B /* Player.swift */; };
 		CB5C0D1E1A997D340084B72B /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D031A997D340084B72B /* BlurView.swift */; };
 		CB5C0D1F1A997D340084B72B /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D041A997D340084B72B /* DesignableButton.swift */; };
 		CB5C0D201A997D340084B72B /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C0D051A997D340084B72B /* DesignableImageView.swift */; };
@@ -59,6 +63,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB05F9411A9FFD4F001642FF /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		CB05F9431AA00956001642FF /* HandStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandStatus.swift; path = ../HandStatus.swift; sourceTree = "<group>"; };
+		CB05F9451AA030EC001642FF /* GameProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameProperties.swift; sourceTree = "<group>"; };
+		CB44B5271A9D5463000C66DF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
 		CB5C0B961A996D520084B72B /* BlackJackMultiPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackJackMultiPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB5C0B9A1A996D520084B72B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB5C0B9B1A996D520084B72B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +78,7 @@
 		CB5C0BB01A996D520084B72B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB5C0BB11A996D520084B72B /* BlackJackMultiPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJackMultiPlayerTests.swift; sourceTree = "<group>"; };
 		CB5C0C281A996F390084B72B /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
-		CB5C0C2A1A996F510084B72B /* PlayerHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerHand.swift; sourceTree = "<group>"; };
+		CB5C0C2A1A996F510084B72B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		CB5C0D031A997D340084B72B /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		CB5C0D041A997D340084B72B /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		CB5C0D051A997D340084B72B /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 			children = (
 				CB5C0D021A997D340084B72B /* Spring */,
 				CB5C0B9B1A996D520084B72B /* AppDelegate.swift */,
+				CB44B5271A9D5463000C66DF /* HomeViewController.swift */,
 				CB5C0B9D1A996D520084B72B /* ViewController.swift */,
 				CB5C0B9F1A996D520084B72B /* Main.storyboard */,
 				CB5C0BA21A996D520084B72B /* Images.xcassets */,
@@ -156,8 +165,11 @@
 				CB5C0BA41A996D520084B72B /* LaunchScreen.xib */,
 				CB5C0B991A996D520084B72B /* Supporting Files */,
 				CB5C0C281A996F390084B72B /* Deck.swift */,
-				CB5C0C2A1A996F510084B72B /* PlayerHand.swift */,
+				CB5C0C2A1A996F510084B72B /* Player.swift */,
 				CB5C0D381A99A7040084B72B /* Dealer.swift */,
+				CB05F9431AA00956001642FF /* HandStatus.swift */,
+				CB05F9411A9FFD4F001642FF /* Hand.swift */,
+				CB05F9451AA030EC001642FF /* GameProperties.swift */,
 			);
 			path = BlackJackMultiPlayer;
 			sourceTree = "<group>";
@@ -330,16 +342,19 @@
 				CB5C0D361A997D340084B72B /* TransitionZoom.swift in Sources */,
 				CB5C0D341A997D340084B72B /* SpringView.swift in Sources */,
 				CB5C0C291A996F390084B72B /* Deck.swift in Sources */,
+				CB05F9421A9FFD4F001642FF /* Hand.swift in Sources */,
 				CB5C0D2B1A997D340084B72B /* Misc.swift in Sources */,
 				CB5C0D301A997D340084B72B /* SpringImageView.swift in Sources */,
+				CB44B5281A9D5463000C66DF /* HomeViewController.swift in Sources */,
 				CB5C0D321A997D340084B72B /* SpringTextField.swift in Sources */,
 				CB5C0B9E1A996D520084B72B /* ViewController.swift in Sources */,
 				CB5C0D1E1A997D340084B72B /* BlurView.swift in Sources */,
 				CB5C0D311A997D340084B72B /* SpringLabel.swift in Sources */,
-				CB5C0C2B1A996F510084B72B /* PlayerHand.swift in Sources */,
+				CB5C0C2B1A996F510084B72B /* Player.swift in Sources */,
 				CB5C0D241A997D340084B72B /* DesignableTextView.swift in Sources */,
 				CB5C0B9C1A996D520084B72B /* AppDelegate.swift in Sources */,
 				CB5C0D1F1A997D340084B72B /* DesignableButton.swift in Sources */,
+				CB05F9461AA030EC001642FF /* GameProperties.swift in Sources */,
 				CB5C0D2F1A997D340084B72B /* SpringButton.swift in Sources */,
 				CB5C0D2D1A997D340084B72B /* Spring.swift in Sources */,
 				CB5C0D211A997D340084B72B /* DesignableLabel.swift in Sources */,
@@ -355,6 +370,7 @@
 				CB5C0D2C1A997D340084B72B /* SoundPlayer.swift in Sources */,
 				CB5C0D2E1A997D340084B72B /* SpringAnimation.swift in Sources */,
 				CB5C0D371A997D340084B72B /* UnwindSegue.swift in Sources */,
+				CB05F9441AA00956001642FF /* HandStatus.swift in Sources */,
 				CB5C0D261A997D340084B72B /* ImageLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

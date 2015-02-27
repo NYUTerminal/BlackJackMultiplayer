@@ -10,55 +10,53 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var noOfDecks: UITextField!
+    @IBOutlet weak var gameState: UILabel!
     
-    @IBOutlet weak var bet1: UITextField!
+    @IBOutlet weak var player5Cards: UILabel!
     
-    @IBOutlet weak var bet2: UITextField!
+    @IBOutlet weak var player4Cards: UILabel!
+    
+    @IBOutlet weak var player3Cards: UILabel!
+    
+    @IBOutlet weak var player2cards: UILabel!
     
     @IBOutlet weak var player1Cards: UILabel!
     
-    @IBOutlet weak var player2Cards: UILabel!
+    @IBOutlet weak var player1Bet: UITextField!
+    
+    @IBOutlet weak var player2Bet: UITextField!
+    
+    @IBOutlet weak var player3Bet: UITextField!
+    
+    @IBOutlet weak var player4Bet: UITextField!
+    
+    @IBOutlet weak var player5Bet: UITextField!
+    
+    @IBOutlet weak var balance: UILabel!
     
     @IBOutlet weak var dealerCards: UILabel!
     
-    @IBOutlet weak var player1Total: UILabel!
-    
-    @IBOutlet weak var player2Total: UILabel!
-    
-    @IBOutlet weak var gameState: UILabel!
     
     let maxPlayerCash = 100
     
-    var bet = 0
-    
-    var balance = 100
-    
-    var playerCardsTotalSum = 0
-    
-    var dealterCardTotalSum = 0
-    
-    var shuffledDeck = Array<String>()
-    
-    var standFlag  = false
-    
-    var isPlayerWon = false
-    
     var numberOfGamesPlayed = 0
     
-    var dealerCardsSum = 0
+    let noOfPlayersInGame :Int = 2
     
-    let noOfPlayersInGame = 2
+    var playerList : [Player] = []
     
-    var PlayerHands = Array<PlayerHand>()
-    let playerHand = PlayerHand()
-    let playerHand1 = PlayerHand()
     let deck = Deck()
-    let dealer  = Dealer()
     
+    var dealer  = Dealer()
+    
+    var numberOfDecks = "5";
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //  let subVIew = UIView
+        
+        
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ironman_crop.png")!)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -68,24 +66,116 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func initialize(){
+        
+        for i:Int in 1...noOfPlayersInGame {
+            var player = Player()
+            player.hand.bet = 0
+            player.hand.handStatus = HandStatus.Statue
+            playerList.append(player)
+        }
+        playerList[0].hand.handStatus = HandStatus.Turn
+        
+    }
+    
+    func getBet(index : Int) -> Double {
+        switch index{
+        case 1:
+            return NSString(string: player1Bet.text).doubleValue
+        case 2:
+            return NSString(string: player2Bet.text).doubleValue
+        case 3:
+            return NSString(string: player3Bet.text).doubleValue
+        case 4:
+            return NSString(string: player4Bet.text).doubleValue
+        case 5:
+            return NSString(string: player5Bet.text).doubleValue
+        default:
+            return 0
+        }
+    }
+    
+    
+    func getLabelsOnIndex(index : Int) -> UILabel {
+        switch index{
+        case 1:
+            return player1Cards
+        case 2:
+            return player2cards
+        case 3:
+            return player3Cards
+        case 4:
+            return player4Cards
+        case 5:
+            return player5Cards
+        default:
+            return player1Cards
+        }
+    }
+    
+    
+    @IBAction func hit(sender: SpringButton) {
+        for i in 1...noOfPlayersInGame{
+            var hand = playerList[i].hand
+            if(hand.handStatus == HandStatus.Turn){
+                hand.cardsInHand.append(deck.getACardFromDeck())
+                if(hand.handSum == 21){
+                    hand.handStatus = HandStatus.BlackJack
+                    showViewItems()
+                }else if(hand.handSum<21){
+                    hand.handStatus = HandStatus.Busted
+                    showViewItems()
+                }
+            }
+        }
+        
+    }
+    
+    
+    @IBAction func stand(sender: SpringButton) {
+        var allPlayersAreDonePlaying = true
+        for i in 1...noOfPlayersInGame{
+            var hand = playerList[i].hand
+            if(hand.handStatus == HandStatus.Turn){
+                hand.handStatus = HandStatus.Stand
+                break
+            }
+        }
+        for i in 1...noOfPlayersInGame{
+            var hand = playerList[i].hand
+            if(hand.handStatus == HandStatus.Turn){
+                allPlayersAreDonePlaying = false
+            }
+        }
+        if(allPlayersAreDonePlaying){
+            dealerTurn()
+        }
+        
+    }
+    
+    
     @IBAction func deal(sender: UIButton) {
         
         //var cards : String = "0";
         
         //var shuffledDeck : [Int] = deck.buildDeck(noOfDecks.text.toInt());
-        if bet1.text == nil ||  bet1.text == "" {
-            gameState.text = "Bet is empty . Please input bet !!"
-            println("Bet is empty . Please input some bet to proceed ")
-            return
+        //TODO Need to add proper validation
+        for i:Int in 1...noOfPlayersInGame {
+            if(playerList[i-1].hand.bet<0 && playerList[i-1].hand.bet>100){
+                gameState.text = "Bet is empty . Please input bet !!"
+                println("Bet is empty . Please input some bet to proceed ")
+                return
+            }
+            
         }
         
         //TODO change logic to stop from playing
         
-        if isGreater( bet1.text.toInt()! ) == false || isGreater( bet2.text.toInt()! ) == false
-        {
-            gameState.text = "Balance is low . You cant play"
-            return
-        }
+        //        if isGreater( bet1.text.toInt()! ) == false || isGreater( bet2.text.toInt()! ) == false
+        //        {
+        //            gameState.text = "Balance is low . You cant play"
+        //            return
+        //        }
         
         /*
         After Every 5 times need to shuffle the deck .
@@ -93,133 +183,115 @@ class ViewController: UIViewController {
         */
         
         
-       
-        PlayerHands.append(playerHand)
-        PlayerHands.append(playerHand1)
-      
-        
         
         if numberOfGamesPlayed%5 == 0 {
             deck.shuffleTheDeck()
         }
         
-        deck.buildDeck(noOfDecks.text)
+        
         //Initializing with for loop . Based on number of players
-        playerHand.initializePlayers()
-        playerHand1.initializePlayers()
+        
+        
+        
+        
+        deck.buildDeck(numberOfDecks)
         dealer.initializeDealer()
-
-        for player in PlayerHands {
-            
-            var isPlayerBusted = playerHand.isBusted()
-            var isPlayer1Busted = playerHand1.isBusted()
-            var isPlayerBlackJack = playerHand.isBlackJack()
-            var isPlayer1BlackJack = playerHand1.isBlackJack()
-            
-            if(isPlayerBusted){
-                playerHand.playerStatus = "busted"
-            }else if(isPlayer1Busted){
-                playerHand1.playerStatus = "busted"
-            }else if(isPlayerBlackJack){
-                playerHand.playerStatus = "blackjack"
-            }else if(isPlayer1BlackJack){
-                playerHand1.playerStatus = "blackjack"
+        for i in 1...noOfPlayersInGame {
+            var playerHand = playerList[i].hand
+            var cardsInHandForPlayer = playerHand.cardsInHand
+            cardsInHandForPlayer.append(deck.getACardFromDeck())
+            cardsInHandForPlayer.append(deck.getACardFromDeck())
+            if(playerHand.isBusted()){
+                playerHand.handStatus = HandStatus.Busted
             }
-
-        }
-        
-       
-        
-        
-       
-        
-       // dealerCards.append(getCardFromDeckAndRemove())
-        //dealerCards.append(getCardFromDeckAndRemove())
-        //        playerCards.append(getCardFromDeckAndRemove())
-        //        playerCards.append(getCardFromDeckAndRemove())
-        //        println("playerCards - \(playerCards)")
-        //        println("dealerCards - \(dealerCards)")
-        //        displayPlayerCardsOnView()
-        //        displayDealerCardsOnViewWithFlip()
-        //        displayNoOfTimesPlayed()
-        //        displayBalance()
-        //        bet = betOnView.text.toInt()!
-        //        numberOfGamesPlayed++
-        //
-//                if isBlackJack(playerCards) == true
-//                {
-//                    makeBillingChanges(true)
-//                    displayBalance()
-//                    resetCardsTotalAndBetOnView()
-//                    gameState.text = "Player Won !!"
-//                    println("Player Won")
-//                    return
-//                }
-        //        if isBusted(playerCards) == true
-        //        {
-        //            makeBillingChanges(false)
-        //            displayBalance()
-        //            resetCardsTotalAndBetOnView()
-        //            gameState.text = "Player Lost !!"
-        //            println("Player lost")
-        //            return
-        //        }
-        //
-        
-    }
-    
-    func isGreater(bet: Int) -> Bool {
-        if bet > 1 && bet < balance{
-            return true
-        }
-        return false
-    }
-    
-    @IBAction func hit1() {
-        
-        if(playerHand.playerStatus != "blackjack" && playerHand.playerStatus != "busted" && playerHand.playerStatus != "busted"){
-            playerHand.cardsInHand.append(deck.getACardFromDeck())
-            validationsAfterHit(playerHand , isDealerHand: false , label: gameState )
-        }
-        
-    }
-    
-
-    
-    @IBAction func stand1() {
-        
-        
-    }
-    
-    @IBAction func hit2() {
-        if(playerHand1.playerStatus != "blackjack" && playerHand1.playerStatus != "busted" && playerHand1.playerStatus != "stand"){
-            playerHand1.cardsInHand.append(deck.getACardFromDeck())
-            validationsAfterHit(playerHand1 , isDealerHand: false , label: gameState )
-        }
-        
-    }
-    
-    
-    @IBAction func stand2() {
-        
-        
-    }
-    
-    func validationsAfterHit(var hand : PlayerHand ,var isDealerHand : Bool , var label : UILabel) {
-        if(hand.isBlackJack()){
-            label.text = label.text! + "BlackJack! Player Wont the game"
-        }else if(hand.isBusted()){
-            label.text = label.text! + "Busted! Player Busted"
-        }
-        
-        if isDealerHand {
-            if(dealer.isBlackJack()){
-                label.text = label.text! + "BlackJack! Dealer Won the game"
-            }else if(dealer.isBusted()){
-                label.text = label.text! + "Busted! Player Won  the game"
+            if(playerHand.isBlackJack()){
+                playerHand.handStatus = HandStatus.BlackJack
             }
         }
+        dealer.dealerHand.append(deck.getACardFromDeck())
+        dealer.dealerHand.append(deck.getACardFromDeck())
+        for i in 1...noOfPlayersInGame {
+            var playerHand = playerList[i].hand
+            validations(playerList[i])
+        }
+        showViewItems()
+        
     }
+    
+    func showViewItems(){
+        for i in 1...noOfPlayersInGame{
+            var hand = playerList[i].hand
+            var currentLabel = getLabelsOnIndex(i)
+            currentLabel.text = hand.getAllCardsInString()
+            balance.text = "\(i)" + "\(playerList[i].balance)" + " , "
+        }
+    }
+    
+    func clearAllItemsOnScreen() {
+        for i in 1...5{
+            playerList = []
+            getLabelsOnIndex(i).text = ""
+            balance.text = ""
+            dealerCards.text = ""
+            dealer = Dealer()
+        }
+        
+    }
+    
+    
+    
+    func validations(var player : Player) {
+        if(player.hand.isBlackJack()){
+            doBalanceChanges(player,isPlayerWon : true)
+        }else if(player.hand.isBusted()){
+            doBalanceChanges(player,isPlayerWon : false)
+        }
+    }
+    
+    
+    func dealerTurn() {
+        
+        while(dealer.dealerCardsSum<16){
+            dealer.dealerHand.append(deck.getACardFromDeck())
+        }
+        println("dealer Card sum after stand \(dealer.dealerCardsSum)")
+        println("dealer Cards \(dealer.dealerHand)")
+        var dealerSum = dealer.dealerCardsSum
+        for playerHand in playerList{
+            
+            if(dealerSum > 21){
+                //Loop through all Players and check each status .
+                if(playerHand.hand.handStatus == HandStatus.Stand){
+                    playerHand.hand.handStatus = HandStatus.Won
+                    doBalanceChanges(playerHand,isPlayerWon : true)
+                }
+                continue
+            }
+            
+            if(dealerSum > playerHand.hand.handSum && playerHand.hand.handStatus == HandStatus.Stand){
+                playerHand.hand.handStatus =  HandStatus.Lost
+                doBalanceChanges(playerHand,isPlayerWon : false)
+            }else if dealerSum < playerHand.hand.handSum{
+                playerHand.hand.handStatus =  HandStatus.Won
+                doBalanceChanges(playerHand,isPlayerWon : true)
+            }else{
+                playerHand.hand.handStatus =  HandStatus.Statue
+                //No balance change incase of draw
+            }
+            
+        }
+        
+    }
+    
+    func doBalanceChanges(var player : Player , var isPlayerWon : Bool) {
+        if(isPlayerWon){
+            player.balance += player.hand.bet
+        }else{
+            player.balance -= player.hand.bet
+        }
+    }
+    
+    
     
 }
 

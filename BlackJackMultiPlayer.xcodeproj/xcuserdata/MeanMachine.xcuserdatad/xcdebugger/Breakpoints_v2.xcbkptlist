@@ -9,45 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BlackJackMultiPlayer/ViewController.swift"
-            timestampString = "446342540.819696"
+            filePath = "BlackJackMultiPlayer/Player.swift"
+            timestampString = "446714169.33364"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "ViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BlackJackMultiPlayer/ViewController.swift"
-            timestampString = "446342540.819696"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "deal(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BlackJackMultiPlayer/PlayerHand.swift"
-            timestampString = "446342540.819696"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "PlayerHand"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "Player"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
@@ -70,17 +38,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BlackJackMultiPlayer/ViewController.swift"
-            timestampString = "446344977.723254"
+            filePath = "BlackJackMultiPlayer/Hand.swift"
+            timestampString = "446714169.33364"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "deal(_:)"
-            landmarkType = "5">
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "Hand"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,29 +58,99 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlackJackMultiPlayer/ViewController.swift"
-            timestampString = "446345545.358726"
+            timestampString = "446714169.33364"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "deal(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BlackJackMultiPlayer/ViewController.swift"
-            timestampString = "446345878.017846"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "deal(_:)"
-            landmarkType = "5">
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BlackJackMultiPlayer.ViewController.standFlag.getter : Swift.Bool"
+                  moduleName = "BlackJackMultiPlayer"
+                  urlString = "file:///Users/MeanMachine/Documents/NYU%20Classes/SecondSem/IOS/Assignments/BlackJackMultiPlayer/BlackJackMultiPlayer/ViewController.swift"
+                  timestampString = "446708101.78682"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BlackJackMultiPlayer.ViewController.standFlag.setter : Swift.Bool"
+                  moduleName = "BlackJackMultiPlayer"
+                  urlString = "file:///Users/MeanMachine/Documents/NYU%20Classes/SecondSem/IOS/Assignments/BlackJackMultiPlayer/BlackJackMultiPlayer/ViewController.swift"
+                  timestampString = "446708101.7871"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BlackJackMultiPlayer.ViewController.standFlag.materializeForSet : Swift.Bool"
+                  moduleName = "BlackJackMultiPlayer"
+                  urlString = "file:///Users/MeanMachine/Documents/NYU%20Classes/SecondSem/IOS/Assignments/BlackJackMultiPlayer/BlackJackMultiPlayer/ViewController.swift"
+                  timestampString = "446708101.787251"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BlackJackMultiPlayer.ViewController.init (BlackJackMultiPlayer.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; BlackJackMultiPlayer.ViewController"
+                  moduleName = "BlackJackMultiPlayer"
+                  urlString = "file:///Users/MeanMachine/Documents/NYU%20Classes/SecondSem/IOS/Assignments/BlackJackMultiPlayer/BlackJackMultiPlayer/ViewController.swift"
+                  timestampString = "446708101.787358"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "834">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BlackJackMultiPlayer.ViewController.init (BlackJackMultiPlayer.ViewController.Type)() -&gt; BlackJackMultiPlayer.ViewController"
+                  moduleName = "BlackJackMultiPlayer"
+                  urlString = "file:///Users/MeanMachine/Documents/NYU%20Classes/SecondSem/IOS/Assignments/BlackJackMultiPlayer/BlackJackMultiPlayer/ViewController.swift"
+                  timestampString = "446708101.787449"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "835">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BlackJackMultiPlayer.ViewController.init (BlackJackMultiPlayer.ViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; BlackJackMultiPlayer.ViewController"
+                  moduleName = "BlackJackMultiPlayer"
+                  urlString = "file:///Users/MeanMachine/Documents/NYU%20Classes/SecondSem/IOS/Assignments/BlackJackMultiPlayer/BlackJackMultiPlayer/ViewController.swift"
+                  timestampString = "446708101.787543"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "888">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
