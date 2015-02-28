@@ -28,14 +28,14 @@ class Deck {
     
     var shuffledDeck = Array<Int>()
     
-    func buildDeck(var noOfCardsInDeck : String) -> [Int]  {
+    func buildDeck(var noOfCardsInDeck : Int) -> [Int]  {
         //Validation for number of cards
         var Suit = ["Spades","Hearts","Diamonds" , "Clubs"]
         //var Card = ["1","2","3","4","5","6","7","8","9","10","10","10","10"]
         var Card = [1,2,3,4,5,6,7,8,9,10,10,10,10]
 
         var deck = Array<Int>()
-        for i in 1...Int(noOfCardsInDeck.toInt()!)
+        for i in 1...noOfCardsInDeck
         {
             for suit in Suit
             {

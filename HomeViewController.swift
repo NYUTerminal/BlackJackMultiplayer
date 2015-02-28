@@ -32,7 +32,13 @@ class HomeViewController: UIViewController {
     
     @IBAction func start() {
         //Initialize and save to singelton class
-        
+        if(noOfDecks.text=="" || noOfPlayers.text == "" || startingBalance == ""){
+            return
+        }
+        var gameProperties = GameProperties.sharedInstance
+        gameProperties.noOfPlayers = noOfPlayers.text.toInt()!
+        gameProperties.startingBalance = NSString(string: startingBalance.text).doubleValue
+        gameProperties.noOfDecks = noOfDecks.text.toInt()!
         
     }
     

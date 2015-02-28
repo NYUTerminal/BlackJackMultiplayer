@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     
     var numberOfGamesPlayed = 0
     
-    let noOfPlayersInGame :Int = 2
+    var noOfPlayersInGame :Int = 2
     
     var playerList : [Player] = []
     
@@ -49,14 +49,15 @@ class ViewController: UIViewController {
     
     var dealer  = Dealer()
     
-    var numberOfDecks = "5";
+    var numberOfDecks:Int = 0;
+    
+    var maxBalanceForPlayer:Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //  let subVIew = UIView
-        
-        
+        noOfPlayersInGame = GameProperties.sharedInstance.noOfPlayers
+        maxBalanceForPlayer = GameProperties.sharedInstance.startingBalance
+        numberOfDecks = GameProperties.sharedInstance.noOfDecks
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ironman_crop.png")!)
         // Do any additional setup after loading the view, typically from a nib.
     }

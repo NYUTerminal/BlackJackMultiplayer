@@ -10,7 +10,11 @@
 //Singelton Class to store all global values
 class GameProperties {
     
-    var noOfPlayers:Int = 5
+    var noOfPlayers:Int = 0
+    
+    var startingBalance:Double = 0
+    
+    var noOfDecks:Int = 0
     
     class var sharedInstance: GameProperties {
         
