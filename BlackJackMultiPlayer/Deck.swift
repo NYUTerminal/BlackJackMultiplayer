@@ -8,34 +8,21 @@
 
 import Foundation
 
-//Referenced from google . How to shuffle an array by extending the inbuilt Array .
-extension Array {
-    func shuffled() -> [T] {
-        var list = self
-        for i in 0..<(list.count - 1) {
-            let j = Int(arc4random_uniform(UInt32(list.count - i))) + i
-            swap(&list[i], &list[j])
-        }
-        return list
-    }
-}
-
 class Deck {
     //Function to initialize the deck
-    
-    //var imageView:UIImageView = UIImageView()
-    var backgroundDict:Dictionary<String, String> = Dictionary()
-    
     var shuffledDeck = Array<Int>()
     
-    func buildDeck(var noOfCardsInDeck : Int) -> [Int]  {
+    var deck = Array<Int>()
+    
+    var gameProperties = GameProperties.sharedInstance
+    
+    func buildDeck(var noOfDecks : Int) -> [Int]  {
         //Validation for number of cards
         var Suit = ["Spades","Hearts","Diamonds" , "Clubs"]
         //var Card = ["1","2","3","4","5","6","7","8","9","10","10","10","10"]
         var Card = [1,2,3,4,5,6,7,8,9,10,10,10,10]
-
-        var deck = Array<Int>()
-        for i in 1...noOfCardsInDeck
+        
+        for i in 1...noOfDecks
         {
             for suit in Suit
             {
@@ -44,19 +31,35 @@ class Deck {
                 }
             }
         }
-        shuffledDeck = deck.shuffled()
+        shuffle()
+        shuffledDeck = deck
+        GameProperties.sharedInstance.deck = shuffledDeck
         return shuffledDeck
     }
     
+    func shuffle() {
+        var temp: Int
+        for i in 0...(deck.count-1) {
+            let j = Int(arc4random_uniform(UnicodeScalarValue(deck.count)))
+            println(j)
+            temp = deck[i]
+            println(i,j)
+            deck[i]=deck[j]
+            deck[j]=temp
+            
+        }
+    }
+    
+    func shuffle<T>(var list: Array<T>) -> Array<T> {
+        for i in 0..<list.count {
+            let j = Int(arc4random_uniform(UInt32(list.count - i))) + i
+            list.insert(list.removeAtIndex(j), atIndex: i)
+        }
+        return list
+    }
+    
     func getACardFromDeck() -> Int {
-       return shuffledDeck.removeAtIndex(0)
+        return GameProperties.sharedInstance.deck.removeAtIndex(0)
     }
-    
-    func shuffleTheDeck(){
-        shuffledDeck = shuffledDeck.shuffled()
-    }
-    
-    
-    
     
 }

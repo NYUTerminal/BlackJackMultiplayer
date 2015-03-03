@@ -10,11 +10,17 @@ import Foundation
 
 class Hand {
     
-    var cardsInHand : [Int] = []
+    var cardsInHand : [Int]
     
-    var handStatus : HandStatus = HandStatus.Turn
+    var handStatus : HandStatus
     
-    var bet : Double = 0
+    var bet : Int = 0
+    
+    init(){
+        bet = 0
+        cardsInHand = []
+        handStatus = HandStatus.Statue
+    }
     
     var handSum : Int {
         get{
@@ -48,10 +54,15 @@ class Hand {
     }
     
     
-    func getAllCardsInString() -> String {
-        var tempString = ""
-        for i in 1...cardsInHand.count{
-            tempString = tempString + " , " + String(cardsInHand[i])
+    func getAllCardsInString(cardsInHand :[Int]) -> String {
+        if(cardsInHand.count==0){
+            return ""
+        }
+        var tempString = String(cardsInHand[0])
+        if(cardsInHand.count>1){
+            for i in 2...cardsInHand.count{
+                tempString = tempString + " , " + String(cardsInHand[i-1])
+            }
         }
         return tempString
     }

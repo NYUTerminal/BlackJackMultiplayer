@@ -16,6 +16,8 @@ class GameProperties {
     
     var noOfDecks:Int = 0
     
+    var deck:[Int] = []
+    
     class var sharedInstance: GameProperties {
         
         struct Static {

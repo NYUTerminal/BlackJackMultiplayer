@@ -36,7 +36,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var dealerCards: UILabel!
     
-    
     let maxPlayerCash = 100
     
     var numberOfGamesPlayed = 0
@@ -49,16 +48,16 @@ class ViewController: UIViewController {
     
     var dealer  = Dealer()
     
-    var numberOfDecks:Int = 0;
+    var numberOfDecks:Int = 2;
     
     var maxBalanceForPlayer:Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        noOfPlayersInGame = GameProperties.sharedInstance.noOfPlayers
-        maxBalanceForPlayer = GameProperties.sharedInstance.startingBalance
-        numberOfDecks = GameProperties.sharedInstance.noOfDecks
-        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ironman_crop.png")!)
+        //noOfPlayersInGame = GameProperties.sharedInstance.noOfPlayers
+        //maxBalanceForPlayer = GameProperties.sharedInstance.startingBalance
+        //numberOfDecks = GameProperties.sharedInstance.noOfDecks
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "")!)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -67,30 +66,133 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func initialize(){
-        
-        for i:Int in 1...noOfPlayersInGame {
-            var player = Player()
-            player.hand.bet = 0
-            player.hand.handStatus = HandStatus.Statue
-            playerList.append(player)
+    @IBAction func hit(sender: SpringButton) {
+        for i in 1...noOfPlayersInGame{
+            var hand = playerList[i-1].hand
+            if(hand.handStatus == HandStatus.Turn){
+                hand.cardsInHand.append(deck.getACardFromDeck())
+                if(hand.handSum == 21){
+                    playerList[i-1].hand.handStatus = HandStatus.BlackJack
+                    showViewItems()
+                    if(i != noOfPlayersInGame){
+                        playerList[i].hand.handStatus = HandStatus.Turn
+                    }
+                    return
+                }else if(hand.handSum>21){
+                    playerList[i-1].hand.handStatus = HandStatus.Busted
+                    showViewItems()
+                    if(i != noOfPlayersInGame){
+                        playerList[i].hand.handStatus = HandStatus.Turn
+                    }else if (i == noOfPlayersInGame){
+                        dealerTurn()
+                    }
+                    return
+                }
+                showViewItems()
+            }
         }
-        playerList[0].hand.handStatus = HandStatus.Turn
         
     }
     
-    func getBet(index : Int) -> Double {
+    
+    @IBAction func stand(sender: SpringButton) {
+        var allPlayersAreDonePlaying = true
+        for i in 1...noOfPlayersInGame{
+            var hand = playerList[i-1].hand
+            if(hand.handStatus == HandStatus.Turn){
+                hand.handStatus = HandStatus.Stand
+                if(i != noOfPlayersInGame){
+                 playerList[i].hand.handStatus = HandStatus.Turn
+                }
+                break
+            }
+        }
+        for i in 1...noOfPlayersInGame{
+            var hand = playerList[i-1].hand
+            if(hand.handStatus == HandStatus.Turn){
+                allPlayersAreDonePlaying = false
+            }
+        }
+        if(allPlayersAreDonePlaying){
+            dealerTurn()
+        }
+        
+    }
+    
+    
+    @IBAction func deal(sender: UIButton) {
+        clearAllItemsOnScreen()
+        //var cards : String = "0";
+        
+        //var shuffledDeck : [Int] = deck.buildDeck(noOfDecks.text.toInt());
+        //TODO Need to add proper validation
+        //        for i:Int in 1...noOfPlayersInGame {
+        //            if(playerList[i-1].hand.bet<0 && playerList[i-1].hand.bet>100){
+        //                gameState.text = "Bet is empty . Please input bet !!"
+        //                println("Bet is empty . Please input some bet to proceed ")
+        //                return
+        //            }
+        //
+        //        }
+        
+        //TODO change logic to stop from playing
+        
+        //        if isGreater( bet1.text.toInt()! ) == false || isGreater( bet2.text.toInt()! ) == false
+        //        {
+        //            gameState.text = "Balance is low . You cant play"
+        //            return
+        //        }
+        
+        /*
+        After Every 5 times need to shuffle the deck .
+        Number of times played should be multiple of 5.
+        */
+        
+        
+        
+        if numberOfGamesPlayed%5 == 0 {
+            //  deck.shuffleTheDeck()
+        }
+        
+        
+        //Initializing with for loop . Based on number of players
+        deck.buildDeck(numberOfDecks)
+        dealer.initializeDealer()
+        for i in 1...noOfPlayersInGame {
+            initialize()
+            var playerHand = playerList[i-1].hand
+            validations(playerList[i-1])
+        }
+        showViewItems()
+        
+    }
+    
+    func initialize(){
+        for i in 1...noOfPlayersInGame {
+            var player = Player()
+            player.initializeHand()
+            player.hand.bet = getBet(i-1)
+            if(i==1){
+                player.hand.handStatus = HandStatus.Turn
+            }else{
+                player.hand.handStatus = HandStatus.Statue
+            }
+            playerList.append(player)
+        }
+    }
+    
+    func getBet(index : Int) -> Int {
         switch index{
         case 1:
-            return NSString(string: player1Bet.text).doubleValue
+            return player1Bet.text.toInt()!
         case 2:
-            return NSString(string: player2Bet.text).doubleValue
+            return player2Bet.text.toInt()!
         case 3:
-            return NSString(string: player3Bet.text).doubleValue
+            return player3Bet.text.toInt()!
         case 4:
-            return NSString(string: player4Bet.text).doubleValue
+            return player4Bet.text.toInt()!
         case 5:
-            return NSString(string: player5Bet.text).doubleValue
+            return player5Bet.text.toInt()!
         default:
             return 0
         }
@@ -114,127 +216,50 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    @IBAction func hit(sender: SpringButton) {
-        for i in 1...noOfPlayersInGame{
-            var hand = playerList[i].hand
-            if(hand.handStatus == HandStatus.Turn){
-                hand.cardsInHand.append(deck.getACardFromDeck())
-                if(hand.handSum == 21){
-                    hand.handStatus = HandStatus.BlackJack
-                    showViewItems()
-                }else if(hand.handSum<21){
-                    hand.handStatus = HandStatus.Busted
-                    showViewItems()
-                }
-            }
-        }
-        
-    }
-    
-    
-    @IBAction func stand(sender: SpringButton) {
-        var allPlayersAreDonePlaying = true
-        for i in 1...noOfPlayersInGame{
-            var hand = playerList[i].hand
-            if(hand.handStatus == HandStatus.Turn){
-                hand.handStatus = HandStatus.Stand
-                break
-            }
-        }
-        for i in 1...noOfPlayersInGame{
-            var hand = playerList[i].hand
-            if(hand.handStatus == HandStatus.Turn){
-                allPlayersAreDonePlaying = false
-            }
-        }
-        if(allPlayersAreDonePlaying){
-            dealerTurn()
-        }
-        
-    }
-    
-    
-    @IBAction func deal(sender: UIButton) {
-        
-        //var cards : String = "0";
-        
-        //var shuffledDeck : [Int] = deck.buildDeck(noOfDecks.text.toInt());
-        //TODO Need to add proper validation
-        for i:Int in 1...noOfPlayersInGame {
-            if(playerList[i-1].hand.bet<0 && playerList[i-1].hand.bet>100){
-                gameState.text = "Bet is empty . Please input bet !!"
-                println("Bet is empty . Please input some bet to proceed ")
-                return
-            }
-            
-        }
-        
-        //TODO change logic to stop from playing
-        
-        //        if isGreater( bet1.text.toInt()! ) == false || isGreater( bet2.text.toInt()! ) == false
-        //        {
-        //            gameState.text = "Balance is low . You cant play"
-        //            return
-        //        }
-        
-        /*
-        After Every 5 times need to shuffle the deck .
-        Number of times played should be multiple of 5.
-        */
-        
-        
-        
-        if numberOfGamesPlayed%5 == 0 {
-            deck.shuffleTheDeck()
-        }
-        
-        
-        //Initializing with for loop . Based on number of players
-        
-        
-        
-        
-        deck.buildDeck(numberOfDecks)
-        dealer.initializeDealer()
-        for i in 1...noOfPlayersInGame {
-            var playerHand = playerList[i].hand
-            var cardsInHandForPlayer = playerHand.cardsInHand
-            cardsInHandForPlayer.append(deck.getACardFromDeck())
-            cardsInHandForPlayer.append(deck.getACardFromDeck())
-            if(playerHand.isBusted()){
-                playerHand.handStatus = HandStatus.Busted
-            }
-            if(playerHand.isBlackJack()){
-                playerHand.handStatus = HandStatus.BlackJack
-            }
-        }
-        dealer.dealerHand.append(deck.getACardFromDeck())
-        dealer.dealerHand.append(deck.getACardFromDeck())
-        for i in 1...noOfPlayersInGame {
-            var playerHand = playerList[i].hand
-            validations(playerList[i])
-        }
-        showViewItems()
-        
-    }
-    
     func showViewItems(){
-        for i in 1...noOfPlayersInGame{
-            var hand = playerList[i].hand
+        var index:Int = 1;
+        var i:Int = 0
+        balance.text = ""
+        gameState.text = ""
+        for i = noOfPlayersInGame; i > 0; i-- {
+            var hand = playerList[i-1].hand
             var currentLabel = getLabelsOnIndex(i)
-            currentLabel.text = hand.getAllCardsInString()
-            balance.text = "\(i)" + "\(playerList[i].balance)" + " , "
+            currentLabel.text = hand.getAllCardsInString(hand.cardsInHand)
+            balance.text = balance.text! + String(index) + ": " + String(playerList[i-1].balance) + " , "
+            //Refactor it to not statue .. bad coding .
+            if(hand.handStatus == HandStatus.BlackJack || hand.handStatus == HandStatus.Busted || hand.handStatus == HandStatus.Turn || hand.handStatus == HandStatus.Stand){
+                gameState.text = gameState.text! + String(i) + ": "+hand.handStatus.rawValue+","
+            }
+            index = index+1
         }
+        showDealerCards(false)
+    }
+    
+    func showDealerCards(var showFullCards : Bool){
+        var dealerHand = dealer.dealerHand
+
+        if(!showFullCards){
+            dealerCards.text = "FLIP"
+        }else{
+            dealerCards.text = String(dealerHand[0])
+        }
+        for var i = dealerHand.count ; i>0 ; i-- {
+            dealerCards.text = dealerCards.text! + " , " + String(dealerHand[i-1])
+        }
+        
     }
     
     func clearAllItemsOnScreen() {
         for i in 1...5{
             playerList = []
             getLabelsOnIndex(i).text = ""
-            balance.text = ""
             dealerCards.text = ""
             dealer = Dealer()
+//            player1Bet.text = ""
+//            player2Bet.text = ""
+//            player3Bet.text = ""
+//            player4Bet.text = ""
+//            player5Bet.text = ""
         }
         
     }
@@ -272,7 +297,7 @@ class ViewController: UIViewController {
             if(dealerSum > playerHand.hand.handSum && playerHand.hand.handStatus == HandStatus.Stand){
                 playerHand.hand.handStatus =  HandStatus.Lost
                 doBalanceChanges(playerHand,isPlayerWon : false)
-            }else if dealerSum < playerHand.hand.handSum{
+            }else if dealerSum < playerHand.hand.handSum && playerHand.hand.handStatus == HandStatus.Stand {
                 playerHand.hand.handStatus =  HandStatus.Won
                 doBalanceChanges(playerHand,isPlayerWon : true)
             }else{
@@ -281,7 +306,8 @@ class ViewController: UIViewController {
             }
             
         }
-        
+        showDealerCards(true)
+        showViewItems()
     }
     
     func doBalanceChanges(var player : Player , var isPlayerWon : Bool) {
@@ -291,8 +317,6 @@ class ViewController: UIViewController {
             player.balance -= player.hand.bet
         }
     }
-    
-    
     
 }
 

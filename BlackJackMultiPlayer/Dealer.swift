@@ -11,11 +11,17 @@ import Foundation
 
 class Dealer {
     
-    var dealerHand  = Array<Int>()
+    var dealerHand:[Int]
     
-    var dealerBalance : Double = 100;
+    var dealerBalance : Double
     
-    let deck = Deck()
+    let deck:Deck
+    
+    init(){
+        dealerHand = []
+        deck = Deck()
+        dealerBalance = 100
+    }
     
     var dealerCardsSum : Int {
         get{

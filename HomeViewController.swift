@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var noOfDecks: UITextField!
     
+    @IBOutlet weak var alertMessage: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +33,11 @@ class HomeViewController: UIViewController {
     
     @IBAction func start() {
         //Initialize and save to singelton class
-        if(noOfDecks.text=="" || noOfPlayers.text == "" || startingBalance == ""){
-            return
-        }
+//        if(noOfDecks.text=="" || noOfPlayers.text == "" || startingBalance == ""){
+//            alertMessage.text = "please input all the fields to proceed to game"
+//            alertMessage.textColor = UIColor.redColor()
+//            return
+//        }
         var gameProperties = GameProperties.sharedInstance
         gameProperties.noOfPlayers = noOfPlayers.text.toInt()!
         gameProperties.startingBalance = NSString(string: startingBalance.text).doubleValue
