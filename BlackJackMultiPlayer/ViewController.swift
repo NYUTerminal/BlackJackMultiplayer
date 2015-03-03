@@ -38,13 +38,13 @@ class ViewController: UIViewController {
     
     let maxPlayerCash = 100
     
-    var numberOfGamesPlayed = 0
+    var numberOfGamesPlayed = 5
     
     var noOfPlayersInGame :Int = 2
     
     var playerList : [Player] = []
     
-    let deck = Deck()
+    var deck = Deck()
     
     var dealer  = Dealer()
     
@@ -151,13 +151,12 @@ class ViewController: UIViewController {
         
         
         if numberOfGamesPlayed%5 == 0 {
-            //  deck.shuffleTheDeck()
+           deck.buildDeck(numberOfDecks)
         }
         
-        
         //Initializing with for loop . Based on number of players
-        deck.buildDeck(numberOfDecks)
         dealer.initializeDealer()
+        numberOfGamesPlayed++;
         for i in 1...noOfPlayersInGame {
             initialize()
             var playerHand = playerList[i-1].hand
