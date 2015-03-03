@@ -24,9 +24,21 @@ class Hand {
     
     var handSum : Int {
         get{
+            //Logic to get Ace as 1 or 11 is implemented below .
             var tempCount : Int = 0
+            var acePresent:Bool = false
             for card in cardsInHand {
+                if(card == 1){
+                    acePresent = true
+                }
                 tempCount += card
+            }
+            if(acePresent){
+                if(tempCount<21){
+                    if(tempCount+10<21){
+                        tempCount = tempCount+10
+                    }
+                }
             }
             //handSum = tempCount
             return tempCount
@@ -58,10 +70,20 @@ class Hand {
         if(cardsInHand.count==0){
             return ""
         }
-        var tempString = String(cardsInHand[0])
+        var tempString = ""
+        if(cardsInHand[0]==1){
+            var tempString = String(cardsInHand[0])+"(11-Ace)"
+        }else{
+            tempString = String(cardsInHand[0])
+        }
+        
         if(cardsInHand.count>1){
             for i in 2...cardsInHand.count{
-                tempString = tempString + " , " + String(cardsInHand[i-1])
+                if(cardsInHand[i-1]==1){
+                    tempString = tempString + " , " + String(cardsInHand[i-1])+"(11-Ace)"
+                }else{
+                    tempString = tempString + " , " + String(cardsInHand[i-1])
+                }
             }
         }
         return tempString
